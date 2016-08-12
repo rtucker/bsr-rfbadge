@@ -229,7 +229,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>fir_filter_fff</value>
+      <value>fir_filter_ccf</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -281,7 +281,7 @@
     </param>
   </block>
   <block>
-    <key>blocks_abs_xx</key>
+    <key>blocks_complex_to_float</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -300,7 +300,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(912, 224)</value>
+      <value>(704, 220)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -308,11 +308,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>blocks_abs_xx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>float</value>
+      <value>blocks_complex_to_float_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -328,10 +324,14 @@
     </param>
   </block>
   <block>
-    <key>blocks_float_to_char</key>
+    <key>blocks_null_sink</key>
     <param>
       <key>alias</key>
       <value></value>
+    </param>
+    <param>
+      <key>bus_conns</key>
+      <value>[[0,],]</value>
     </param>
     <param>
       <key>comment</key>
@@ -347,7 +347,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1040, 213)</value>
+      <value>(944, 408)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -355,19 +355,15 @@
     </param>
     <param>
       <key>id</key>
-      <value>blocks_float_to_char_0</value>
+      <value>blocks_null_sink_0</value>
     </param>
     <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
+      <key>type</key>
+      <value>float</value>
     </param>
     <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>scale</key>
-      <value>scalef</value>
+      <key>num_inputs</key>
+      <value>1</value>
     </param>
     <param>
       <key>vlen</key>
@@ -375,10 +371,14 @@
     </param>
   </block>
   <block>
-    <key>blocks_integrate_xx</key>
+    <key>blocks_null_sink</key>
     <param>
       <key>alias</key>
       <value></value>
+    </param>
+    <param>
+      <key>bus_conns</key>
+      <value>[[0,],]</value>
     </param>
     <param>
       <key>comment</key>
@@ -389,16 +389,12 @@
       <value></value>
     </param>
     <param>
-      <key>decim</key>
-      <value>avg*freq</value>
-    </param>
-    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(696, 229)</value>
+      <value>(1000, 352)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -406,19 +402,15 @@
     </param>
     <param>
       <key>id</key>
-      <value>blocks_integrate_xx_0</value>
+      <value>blocks_null_sink_0_0</value>
     </param>
     <param>
       <key>type</key>
       <value>float</value>
     </param>
     <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
+      <key>num_inputs</key>
+      <value>1</value>
     </param>
     <param>
       <key>vlen</key>
@@ -480,7 +472,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1160, 325)</value>
+      <value>(1128, 269)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -492,7 +484,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>byte</value>
+      <value>float</value>
     </param>
     <param>
       <key>label</key>
@@ -547,7 +539,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>float</value>
+      <value>complex</value>
     </param>
     <param>
       <key>vlen</key>
@@ -642,25 +634,25 @@
   </block>
   <connection>
     <source_block_id>band_pass_filter_0</source_block_id>
-    <sink_block_id>blocks_integrate_xx_0</sink_block_id>
+    <sink_block_id>blocks_complex_to_float_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_abs_xx_0</source_block_id>
-    <sink_block_id>blocks_float_to_char_0</sink_block_id>
+    <source_block_id>blocks_complex_to_float_0</source_block_id>
+    <sink_block_id>blocks_null_sink_0</sink_block_id>
+    <source_key>1</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_complex_to_float_0</source_block_id>
+    <sink_block_id>blocks_null_sink_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_float_to_char_0</source_block_id>
+    <source_block_id>blocks_complex_to_float_0</source_block_id>
     <sink_block_id>pad_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_integrate_xx_0</source_block_id>
-    <sink_block_id>blocks_abs_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

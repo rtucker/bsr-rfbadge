@@ -547,7 +547,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>byte</value>
+      <value>float</value>
     </param>
     <param>
       <key>label</key>
@@ -590,7 +590,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>byte</value>
+      <value>float</value>
     </param>
     <param>
       <key>label</key>
@@ -602,7 +602,7 @@
     </param>
     <param>
       <key>optional</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>vlen</key>
@@ -633,7 +633,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>byte</value>
+      <value>float</value>
     </param>
     <param>
       <key>label</key>
@@ -645,7 +645,7 @@
     </param>
     <param>
       <key>optional</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>vlen</key>
@@ -676,7 +676,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>byte</value>
+      <value>float</value>
     </param>
     <param>
       <key>label</key>
@@ -688,7 +688,7 @@
     </param>
     <param>
       <key>optional</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>vlen</key>
@@ -731,7 +731,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>float</value>
+      <value>complex</value>
     </param>
     <param>
       <key>vlen</key>
