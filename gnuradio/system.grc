@@ -89,6 +89,33 @@
     </param>
     <param>
       <key>_coordinate</key>
+      <value>(144, 155)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>freq_if</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>64000</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
       <value>(8, 160)</value>
     </param>
     <param>
@@ -101,7 +128,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>32000</value>
+      <value>256000</value>
     </param>
   </block>
   <block>
@@ -124,11 +151,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(712, 221)</value>
+      <value>(808, 221)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -886,6 +913,10 @@
       <value>0</value>
     </param>
     <param>
+      <key>freq_if</key>
+      <value>freq_if</value>
+    </param>
+    <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
@@ -931,6 +962,10 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>freq_if</key>
+      <value>freq_if</value>
     </param>
     <param>
       <key>samp_rate</key>

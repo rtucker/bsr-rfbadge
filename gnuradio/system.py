@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: System
-# Generated: Fri Aug  5 18:38:12 2016
+# Generated: Sat Aug  6 17:26:06 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -22,6 +22,7 @@ sys.path.append(os.environ.get('GRC_HIER_PATH', os.path.expanduser('~/.grc_gnura
 
 from PyQt4 import Qt
 from decode import decode  # grc-generated hier_block
+from gnuradio import audio
 from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import gr
@@ -62,17 +63,20 @@ class system(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 32000
+        self.samp_rate = samp_rate = 256000
+        self.freq_if = freq_if = 64000
 
         ##################################################
         # Blocks
         ##################################################
         self.tx_0 = tx(
+            freq_if=freq_if,
             samp_rate=samp_rate,
         )
         self.top_layout.addWidget(self.tx_0)
         self.rx_0 = rx(
             samp_rate=samp_rate,
+            freq_if=freq_if,
         )
         self.qtgui_number_sink_0 = qtgui.number_sink(
             gr.sizeof_char,
@@ -113,6 +117,7 @@ class system(gr.top_block, Qt.QWidget):
             samp_rate=samp_rate,
         )
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_char*1)
+        self.audio_sink_0 = audio.sink(samp_rate, "", True)
 
         ##################################################
         # Connections
@@ -121,6 +126,7 @@ class system(gr.top_block, Qt.QWidget):
         self.connect((self.decode_0, 0), (self.qtgui_number_sink_0, 0))    
         self.connect((self.decode_0, 1), (self.qtgui_number_sink_0, 1))    
         self.connect((self.decode_0, 2), (self.qtgui_number_sink_0, 2))    
+        self.connect((self.rx_0, 0), (self.audio_sink_0, 0))    
         self.connect((self.rx_0, 0), (self.decode_0, 0))    
         self.connect((self.tx_0, 0), (self.rx_0, 0))    
 
@@ -138,6 +144,14 @@ class system(gr.top_block, Qt.QWidget):
         self.decode_0.set_samp_rate(self.samp_rate)
         self.rx_0.set_samp_rate(self.samp_rate)
         self.tx_0.set_samp_rate(self.samp_rate)
+
+    def get_freq_if(self):
+        return self.freq_if
+
+    def set_freq_if(self, freq_if):
+        self.freq_if = freq_if
+        self.rx_0.set_freq_if(self.freq_if)
+        self.tx_0.set_freq_if(self.freq_if)
 
 
 def main(top_block_cls=system, options=None):
